@@ -1,5 +1,13 @@
 # greenbank
-This a test to print the weaher of a city entered in the form by using an Api
+La Green Bank, fondée en 2022, est une institution financière novatrice axée
+sur la durabilité et l'impact environnemental positif. Son objectif principal est
+de catalyser des investissements et des initiatives qui favorisent la transition
+vers une économie verte et durable.
+
+## Objectif:
+Réaliser un simulateur d’emprunt
+pour l’achat d’une voiture.
+
 
 ### Contribuer au projet
 1. Clone le projet
