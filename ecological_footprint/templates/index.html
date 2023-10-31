@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>greenbank</title>
+    <style>
+       .errorlist {
+           color: red;
+       }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center font-weight-bold">
+            SIMULATION D'EMPRUNT
+        </div>
+        <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+    
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <div class="small text-danger">{{ error }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <button type="submit" class="btn btn-primary">Calculer le taux d'emprunt</button>
+        </form> 
+    </div>
+</div>
+</div>
+{% if borrowing_rate %}
+    <div class="alert alert-info">
+        Le taux d'emprunt est : <strong>{{ borrowing_rate }} %</strong>
+    </div>
+{% endif %}
+</body>
+</html>
+
+
+
